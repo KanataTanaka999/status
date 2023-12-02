@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  front:
+    build: ./front/
+    command: npm run dev
+    volumes:
+      - ./front/src:/src
+    ports:
+      - "3000:3000"
