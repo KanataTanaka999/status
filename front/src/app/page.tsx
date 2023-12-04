@@ -71,7 +71,7 @@ export default function SplitWithImage() {
             <Feature
               icon={<Icon as={RiAliensFill} color={'red.500'} w={5} h={5} />}
               iconBg={useColorModeValue('red.100', 'red.900')}
-              text={'S: 国内上位15%級'}
+              text={'S: 国内上位10%級'}
             />
             <Feature
               icon={<Icon as={GiHealing} color={'orange.500'} w={5} h={5} />}

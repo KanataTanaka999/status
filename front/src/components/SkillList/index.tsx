@@ -25,6 +25,10 @@ import { SiReact } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
 import { SiDocker } from "react-icons/si";
 import {SiDjango} from "react-icons/si";
+import { SiAmazonaws } from "react-icons/si";
+import { SiMilvus } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { SiSymfony } from "react-icons/si";
 
 
 interface CardProps {
@@ -73,40 +77,46 @@ export default function SkillList() {
           Skill Set
         </Heading>
         <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
-          現在の取得技術とそのレベルを示しています。
+          上記を達成する上で、具体的に勉強する技術を以下に示します。
         </Text>
       </Stack>
 
       <Container maxW={'5xl'} mt={12}>
         <Flex flexWrap="wrap" gridGap={6} justify="center">
           <Card
-            heading={'Heading'}
+            heading={'PyTorch'}
             icon={<Icon as={SiPytorch} w={10} h={10} color={'green.500'} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            description={'AIの実装'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={SiLaravel} w={10} h={10} color={'green.500'} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            heading={'Django'}
+            icon={<Icon as={SiDjango} w={10} h={10} color={'green.500'} />}
+            description={'バックエンドのメインフレームワーク'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={SiReact} w={10} h={10} color={'green.500'} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
-            href={'#'}
-          />
-          <Card
-            heading={'Heading'}
+            heading={'Next.js'}
             icon={<Icon as={SiNextdotjs} w={10} h={10} color={'green.500'} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            description={'フロントエンドのメインフレームワーク'}
             href={'#'}
           />
           <Card
-            heading={'Heading'}
-            icon={<Icon as={SiDocker} w={10} h={10} color={'green.500'} />}
-            description={'Lorem ipsum dolor sit amet catetur, adipisicing elit.'}
+            heading={'AWS'}
+            icon={<Icon as={SiAmazonaws} w={10} h={10} color={'green.500'} />}
+            description={'インフラ構築'}
+            href={'#'}
+          />
+          <Card
+            heading={'MySQL'}
+            icon={<Icon as={SiMysql} w={10} h={10} color={'green.500'} />}
+            description={'データベース'}
+            href={'#'}
+          />
+          <Card
+            heading={'milvus'}
+            icon={<Icon as={SiMilvus} w={10} h={10} color={'green.500'} />}
+            description={'AI系システムのデータベース'}
             href={'#'}
           />
         </Flex>

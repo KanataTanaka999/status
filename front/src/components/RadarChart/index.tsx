@@ -5,7 +5,7 @@ const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
 const RadarChart = () => {
 
   /**
-   * S: 国内上位15%級
+   * S: 国内上位10%級
    * A: 技術部エース級
    * B: プロジェクト内の技術リーダー級
    * C: プロジェクト内で1メンバー
@@ -16,13 +16,13 @@ const RadarChart = () => {
     {
       category: 'BackEnd',
       current: 2,
-      after: 4,
+      after: 3.5,
       color: '#000000',
     },
     {
       category: 'DataScience',
       current: 1,
-      after: 5,
+      after: 4,
       color: '#000000',
     },
     {
@@ -33,19 +33,19 @@ const RadarChart = () => {
     },
     {
       category: 'FrontEnd',
-      current: 2,
-      after: 3,
+      current: 1.5,
+      after: 2.5,
       color: '#000000',
     },
     {
       category: 'DevOps',
-      current: 1,
+      current: 0.5,
       after: 2,
       color: '#000000',
     },
     {
       category: 'InfraStracture',
-      current: 1,
+      current: 0.5,
       after: 3,
       color: '#000000',
     },
@@ -55,14 +55,24 @@ const RadarChart = () => {
     switch (data) {
       case 0:
         return 'E';
+      case 0.5:
+        return 'E+';
       case 1:
         return 'D';
+      case 1.5:
+        return 'D+';
       case 2:
         return 'C';
+      case 2.5:
+        return 'C+';
       case 3:
         return 'B';
+      case 3.5:
+        return 'B+';
       case 4:
         return 'A';
+      case 4.5:
+        return 'A+';
       case 5:
         return 'S';
     }
@@ -115,20 +125,7 @@ const RadarChart = () => {
         opacity: 0.5,
       },
       formatter: function (val: any, opts: any) {
-        switch (val) {
-          case 0:
-            return 'E';
-          case 1:
-            return 'D';
-          case 2:
-            return 'C';
-          case 3:
-            return 'B';
-          case 4:
-            return 'A';
-          case 5:
-            return 'S';
-        }
+        return getRank(val);
       },
     },
   };
@@ -150,8 +147,8 @@ const RadarChart = () => {
         options={options}
         series={series}
         type="radar"
-        height={500}
-        width={500}
+        height={530}
+        width={530}
         className="flex justify-center"
       />
     );
