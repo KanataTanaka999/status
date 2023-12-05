@@ -14,12 +14,12 @@ import {
   AccordionIcon,
 } from '@chakra-ui/react'
 import TaskList from '@/components/TaskList'
-import type { TaskListType } from '@/components/TaskList'
+import type { Task } from '@/components/TaskList'
 
 
 export type MissionItem = {
   title: string;
-  tasks: TaskListType;
+  tasks: Task[];
 }
 
 export type MissionList = {

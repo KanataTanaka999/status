@@ -51,7 +51,7 @@ const RadarChart = () => {
     },
   ];
 
-  const getRank = (data: number) => {
+  const getRank = (data: number): string => {
     switch (data) {
       case 0:
         return 'E';
@@ -75,6 +75,8 @@ const RadarChart = () => {
         return 'A+';
       case 5:
         return 'S';
+      default:
+        return 'E';
     }
   }
 
@@ -124,7 +126,7 @@ const RadarChart = () => {
         borderColor: '#000000',
         opacity: 0.5,
       },
-      formatter: function (val: any, opts: any) {
+      formatter: (val: number): string | number => {
         return getRank(val);
       },
     },

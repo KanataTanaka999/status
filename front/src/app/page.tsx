@@ -29,6 +29,7 @@ import SkillList from '@/components/SkillList'
 import RadarChart from '@/components/RadarChart'
 import Mission from '@/components/Mission'
 import type { MissionItem } from '@/components/Mission'
+import type { TaskListType } from '@/components/TaskList'
 
 interface FeatureProps {
   text: string
@@ -153,7 +154,7 @@ export default function Main() {
   );
 }
 
-export function SplitWithImage() {
+function SplitWithImage() {
   return (
     <Box p={4}>
       <Stack spacing={4} as={Container} maxW={'3xl'} textAlign={'center'}>

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  front:
+    build: ./front/
+    command: npm run start
+    volumes:
+      - ./front/src:/src
+    depends_on:
+      - back
+    labels:
+      # ルーティング設定
+      - "traefik.enable=true"
+      - "traefik.http.routers.status.rule=Host(`status.kntnk999.com`)"
+      - "traefik.http.routers.status.entrypoints=websecure" # HTTPS
+      - "traefik.http.routers.status.middlewares=my-auth" # basic認証
+      - "traefik.http.routers.status.tls=true"
+      - "traefik.http.routers.status.tls.certresolver=myresolver"
+      - "traefik.http.routers.status.tls.domains[0].main=status.kntnk999.com"
+      - "traefik.http.routers.status.tls.domains[0].sans=*.kntnk999.com"
+      # Flaskアプリケーションのポートを指定
+      - "traefik.http.services.status.loadbalancer.server.port=3000"
+    networks:
+      - web
+networks:
+  web:
+    external: true
