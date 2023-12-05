@@ -6,8 +6,6 @@ services:
     command: npm run start
     volumes:
       - ./front/src:/src
-    depends_on:
-      - back
     labels:
       # ルーティング設定
       - "traefik.enable=true"
