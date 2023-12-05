@@ -77,7 +77,7 @@ export default function SkillList() {
           Skill Set
         </Heading>
         <Text color={'gray.600'} fontSize={{ base: 'sm', sm: 'lg' }}>
-          上記を達成する上で、具体的に勉強する技術を以下に示します。
+          修得済みのスキルセットです。
         </Text>
       </Stack>
 
